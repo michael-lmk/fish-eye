@@ -1,0 +1,104 @@
+
+body{
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+}
+/*******************/
+/*      header     */
+/*******************/
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.logo img{
+    width: 100%;
+}
+
+nav{
+    flex: 2;
+}
+
+.tags a {
+    color: #901C1C;
+    border: 1px solid #901C1C;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    margin: 5px 2px 5px 2px;
+    text-decoration: none;
+    font-weight: bold;
+
+} 
+
+header h1 {
+    flex: 1;
+    color: #901C1C;
+    font-size: 40px;
+}
+
+/**********************/
+/*        main        */
+/**********************/
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin-top: 30px;
+    padding: 5px;
+    min-width: 350px;
+}
+
+.container_img{
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+
+}
+
+article img{
+    width:300px;
+    height:300px;
+    clip-path:ellipse(50% 50%);
+    object-fit: cover;
+}
+
+article h2 {
+    color: #D3573C;
+    justify-content: center;
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+article p {
+    margin: 0;
+}
+
+article .tags {
+    margin: 10px;
+}
+
+article .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+article h4{
+    margin: 5px;
+    color: #901C1C;
+}
