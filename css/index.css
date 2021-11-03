@@ -50,7 +50,7 @@ header h1 {
 main{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 article{

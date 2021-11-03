@@ -2,7 +2,7 @@
 async function get_data_photographers() {
     const response = await fetch('../json/data.json');
     const datas = await response.json();
-    console.log(datas.photographers);
+    
     return datas.photographers;
     
 }
@@ -43,4 +43,4 @@ async function build_card () {
 
 
 
-
+build_card()
