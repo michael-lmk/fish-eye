@@ -3,6 +3,8 @@ const urlParams = new URLSearchParams(queryString);
 const userId = urlParams.get('i');
 const selectInputDom = document.getElementById("sort_input");
 
+
+
 function sort_by_likes (a,b) {
     return a.likes - b.likes;
 }
@@ -117,10 +119,30 @@ async function send_media_to_html (orderParam) {
     }
 }
 
+function increase () {
+
+}
+
 selectInputDom.addEventListener("change", () => {
-    console.log(selectInputDom.value);
+    
     send_media_to_html(selectInputDom.value);
 })
 
-send_media_to_html();
+
+
+send_media_to_html().then(() => {
+    const likesDom = document.getElementsByClassName("container_likes");
+
+    for (let index = 0; index < likesDom.length; index++) {
+    
+        likesDom[index].addEventListener("click", () => {
+            let element = likesDom[index].getElementsByClassName("nb_likes")[0];
+            nb = parseInt(element.innerHTML);
+            nb+=1;
+            element.innerHTML = nb;
+        });
+    
+    }
+});
+
 send_Profile_to_html();

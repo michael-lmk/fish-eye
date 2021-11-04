@@ -130,3 +130,7 @@ select{
     margin-left: 10px;
     border: none;
 }
+
+.container_likes{
+    cursor: pointer;
+}
