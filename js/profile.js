@@ -71,23 +71,33 @@ async function send_media_to_html (orderParam) {
         case "3":
             order_by = sort_by_title  
             break;
-    
         default:
             order_by = sort_by_likes
             break;
     }
+    
     const medias = await get_data_medias(order_by);
 
     // Ajout des photos dans le html   
     const mediasDom = document.getElementById("album");
     mediasDom.innerHTML = "";
-    
+
     for (let index = 0; index < medias.length; index++) {
         const media = medias[index];
         
         mediasDom.innerHTML += `
             <div class="picture_container">
-                <img class="picture" src="../img/${media.photographerId}/${media.image || media.video}" class="album_img" alt="">
+            ${
+                media.image?
+                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt=""></img>`
+                :
+                    `<video class="picture" controls width="250">
+                        <source src="../img/${media.photographerId}/${media.video}" type="video/mp4">
+
+                        Sorry, your browser doesn't support embedded videos.
+                    </video>`
+            }
+                
                 <div class="desc">
                     <p class="media_title">${media.title}</p>
                     <div class="container_likes">
