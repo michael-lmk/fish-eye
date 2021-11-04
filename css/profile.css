@@ -113,3 +113,20 @@
     display: flex;
     flex-direction: row;
 }
+
+/************************/
+/******* Sort by ********/
+/************************/
+
+.sort{
+    display: flex;
+    margin-left: 7.5em;
+}
+
+select{
+    background-color: #901C1C;
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: none;
+}
