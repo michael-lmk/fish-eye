@@ -7,13 +7,39 @@ async function get_data_photographers() {
     
 }
 
-async function build_card () {
+// Place les évenements "click" sur les tags
+function appendEvent() {
+    const tags_DOM = document.getElementsByClassName("sort_by_tag");
+
+    for (let index = 0; index < tags_DOM.length; index++) {
+        const element = tags_DOM[index];
+        element.addEventListener("click", (e) => {
+            e.preventDefault();
+            build_card(element.innerText.slice(1));
+        })
+    }
+}
+
+async function build_card (sort) {
+    if (sort) {
+        sort = sort.toLowerCase();
+    }
+    
+    // recuperation des photographes 
     const datas = await get_data_photographers();
+
+    // On vide la div avant de la remplir pour evité tout doublon
+    document.getElementById("main").innerHTML = "";
 
     for (let index_1 = 0; index_1 < datas.length; index_1++) {
         const data = datas[index_1];
+        let html = "";
 
-        let html = `
+        //si le parametre existe et que le tag n'est pas inclus dans le profil on ne l'affiche pas 
+        if (sort && !data.tags.includes(sort)) {
+            console.log("ne pas affiché.", "sort :", sort, ", name: ",data.name );
+        } else {
+            html = `
             <article data-id="${data.id}">
                 <a class="link" href="./profile.html?i=${data.id}">
                     <div class="container_img">
@@ -28,19 +54,25 @@ async function build_card () {
 
             for (let index = 0; index < data.tags.length; index++) {
                 const element = data.tags[index];
-                html+= `<a href="">#${element}</a>`;
+                html+= `<a class="sort_by_tag" href="">#${element}</a>`;
             }
 
             html +=`</div>
             </article>
-      `;
+            `;
+            document.getElementById("main").innerHTML += html;
+        }
       
-        document.getElementById("main").innerHTML += html;
+        
       
     }
+
+    appendEvent();
     
 }
 
 
 
-build_card()
+
+
+build_card();
