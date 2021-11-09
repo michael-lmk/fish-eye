@@ -1,3 +1,14 @@
+
+header{
+    display: flex;
+    margin-left: 50px;
+}
+
+figure {
+    max-width: 20em;
+}
+
+
 /************************/
 /******* Profile ********/
 /************************/
@@ -75,6 +86,7 @@
     width: 25%;
     padding: 1em;
     height: 16em;
+    min-width: 16em;
 }
 
 .picture{
@@ -100,6 +112,7 @@
 .svg_container{
     height: 15px;
     width: 15px;
+    margin-left: 5px;
 }
 
 .nb_likes{
@@ -113,6 +126,8 @@
     display: flex;
     flex-direction: row;
 }
+
+
 
 /************************/
 /******* Sort by ********/
@@ -133,4 +148,75 @@ select{
 
 .container_likes{
     cursor: pointer;
+}
+/*****************************/
+/****** price_container ******/
+/*****************************/
+
+
+.price_container{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+    width: 14em;
+    height: 70px;
+    border-radius: 5px 5px 0 0;
+    background-color: #D3573C;
+    color: rgba(34, 29, 29, 0.815);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+#total_likes {
+    display: flex;
+}
+
+@media screen and (max-width: 700px) {
+    .profile{
+        background-color: white; 
+        margin: 0; 
+        padding: 0;
+    }
+    .container_img img {
+        width: 150px;
+        height: 150px;
+        margin: 0;
+    }
+    .picture_container{
+        min-width: none;
+        width: 100%!important;
+    }
+    .profile h1 {
+        font-size: 40px;
+        margin: 0;
+    }
+    .profile h4 {
+        font-size: 20px;
+        margin: 0px;
+    }
+    .tags{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 13px;
+    }
+    figure > img {
+        width: 50%;
+    }
+    figure{
+        margin: 0px 0px 15px 0px;
+    }
+    header{
+        margin: 0px;
+    }
+    .info_user{
+        margin: 0;
+    }
+    #price_by_day{
+        display: none;
+    }
+    .sort{
+        margin-left: 0;
+    }
 }
