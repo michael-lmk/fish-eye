@@ -21,9 +21,7 @@ function appendEvent() {
 }
 
 async function build_card (sort) {
-    if (sort) {
-        sort = sort.toLowerCase();
-    }
+ 
     
     // recuperation des photographes 
     const datas = await get_data_photographers();
