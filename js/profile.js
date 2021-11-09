@@ -119,18 +119,7 @@ async function send_media_to_html (orderParam) {
     }
 }
 
-function increase () {
-
-}
-
-selectInputDom.addEventListener("change", () => {
-    
-    send_media_to_html(selectInputDom.value);
-})
-
-
-
-send_media_to_html().then(() => {
+function increase_likes () {
     const likesDom = document.getElementsByClassName("container_likes");
 
     for (let index = 0; index < likesDom.length; index++) {
@@ -143,6 +132,19 @@ send_media_to_html().then(() => {
         });
     
     }
+}
+
+selectInputDom.addEventListener("change", () => {
+    
+    send_media_to_html(selectInputDom.value).then(() => {
+        increase_likes();
+    });
+})
+
+
+
+send_media_to_html().then(() => {
+    increase_likes();
 });
 
 send_Profile_to_html();
