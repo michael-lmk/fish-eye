@@ -5,7 +5,7 @@ const selectInputDom = document.getElementById("sort_input");
 const btnContactDom = document.getElementById('btn_contact_form');
 const btnContactClose = document.getElementById('close_form');
 const btnCloseLightbox = document.getElementById('close_form_2');
-const imagesDom = document.getElementsByClassName("picture_container");
+const imagesDom = document.getElementsByClassName("picture");
 
 
 let albumMediaSave = [];
@@ -97,7 +97,7 @@ async function send_media_to_html (orderParam) {
     // Ajout des photos dans le html   
     const mediasDom = document.getElementById("album");
     mediasDom.innerHTML = "";
-
+    
     // total de likes sur l'album
     let count_likes = 0;
 
@@ -107,13 +107,13 @@ async function send_media_to_html (orderParam) {
         count_likes += media.likes;
 
         mediasDom.innerHTML += `
-            <div class="picture_container" data-id="${media.id}">
+            <div class="picture_container">
             ${
                 media.image?
-                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt=""></img>`
+                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt=""  data-id="${media.id}"></img>`
                 :
-                    `<video class="picture" controls width="250">
-                        <source src="../img/${media.photographerId}/${media.video}" type="video/mp4">
+                    `<video class="picture" controls width="250" data-id="${media.id}">
+                        <source src="../img/${media.photographerId}/${media.video}" type="video/mp4" ">
 
                         Sorry, your browser doesn't support embedded videos.
                     </video>`
@@ -176,8 +176,8 @@ async function img_event_click () {
             document.getElementById("visualisation").style.display = "block";
             
             let dataId = event.currentTarget.getAttribute("data-id");
-
-            currentIndexImg = albumMediaSave.findIndex((element) => dataId == element.id)
+           
+            currentIndexImg = albumMediaSave.findIndex((element) => dataId == element.id);
 
             if (albumMediaSave[currentIndexImg].image) {
                 document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
@@ -199,12 +199,9 @@ document.getElementsByClassName("next")[0].addEventListener("click", () => {
     
     if (currentIndexImg === 0) {
         currentIndexImg = albumMediaSave.length-1;
-        console.log(albumMediaSave.length);
     }else{
         currentIndexImg--;
     }
-    
-    console.log(albumMediaSave[currentIndexImg]);
 
     if (albumMediaSave[currentIndexImg].image) {
         document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;

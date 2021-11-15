@@ -52,12 +52,13 @@ figure {
 
 .tags a {
     color: #901C1C;
-    border: 1px solid #901C1C;
+    border: 1px solid #c4c4c4;
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     margin: 5px 2px 5px 2px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.5s;
 
 }
 
@@ -86,6 +87,7 @@ figure {
     color: white;
     margin-left: 3em;
     cursor: pointer;
+    transition: 0.3s;
 }
 /*************************/
 /******** Album **********/
@@ -179,7 +181,7 @@ select{
     width: 14em;
     height: 70px;
     border-radius: 5px 5px 0 0;
-    background-color: #D3573C;
+    background-color: #DB8876;
     color: rgba(34, 29, 29, 0.815);
     font-size: 25px;
     font-weight: 800;
@@ -393,3 +395,17 @@ textarea {
     }
 }
 
+/**********************/
+/**** hover/focus *****/
+/**********************/
+
+.btn_contact_form:hover{
+    color: black;
+    background-color: #DB8876;
+}
+
+.tags a:hover {
+    color: white;
+    /* border: 1px solid #525252; */
+    background-color: #901C1C;
+}
