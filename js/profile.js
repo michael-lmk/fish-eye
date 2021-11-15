@@ -8,6 +8,10 @@ const btnCloseLightbox = document.getElementById('close_form_2');
 const imagesDom = document.getElementsByClassName("picture_container");
 
 
+let albumMediaSave = [];
+let currentIndexImg = 0;
+
+
 function sort_by_likes (a,b) {
     return a.likes - b.likes;
 }
@@ -33,7 +37,7 @@ async function get_data_medias(order_by) {
         mediasOfUser.sort(order_by);
     }
    
-    
+    albumMediaSave = mediasOfUser;
     return mediasOfUser;
     
 }
@@ -163,16 +167,78 @@ function increase_likes () {
 }
 
 async function img_event_click () {
-    const medias = await get_data_medias();
+    
 
     for (let index = 0; index < imagesDom.length; index++) {
     
-        imagesDom[index].addEventListener("click", () => {
+        imagesDom[index].addEventListener("click", (event) => {
+            event.preventDefault();
             document.getElementById("visualisation").style.display = "block";
+            
+            let dataId = event.currentTarget.getAttribute("data-id");
+
+            currentIndexImg = albumMediaSave.findIndex((element) => dataId == element.id)
+
+            if (albumMediaSave[currentIndexImg].image) {
+                document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
+            }else{
+                document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
+                    <video class="picture" controls width="250" autoplay="true">
+                        <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
+        
+                        Sorry, your browser doesn't support embedded videos.
+                    </video>`;
+            }
+            
         });
     
     }
 }
+
+document.getElementsByClassName("next")[0].addEventListener("click", () => {
+    
+    if (currentIndexImg === 0) {
+        currentIndexImg = albumMediaSave.length-1;
+        console.log(albumMediaSave.length);
+    }else{
+        currentIndexImg--;
+    }
+    
+    console.log(albumMediaSave[currentIndexImg]);
+
+    if (albumMediaSave[currentIndexImg].image) {
+        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
+    }else{
+        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
+            <video class="current_picture" controls width="250"  autoplay="true">
+                <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
+
+                Sorry, your browser doesn't support embedded videos.
+            </video>`;
+    }
+    
+})
+
+document.getElementsByClassName("previous")[0].addEventListener("click", () => {
+    
+    if (currentIndexImg === albumMediaSave.length-1) {
+        currentIndexImg = 0;
+    }else{
+        currentIndexImg++;
+    }
+
+    if (albumMediaSave[currentIndexImg].image) {
+        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
+    }else{
+        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
+            <video class="picture" controls width="250">
+                <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
+
+                Sorry, your browser doesn't support embedded videos.
+            </video>`;
+    }
+    
+})
 
 selectInputDom.addEventListener("change", () => {
     

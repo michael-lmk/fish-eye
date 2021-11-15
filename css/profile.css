@@ -306,8 +306,12 @@ textarea {
     cursor: pointer;
 }
 
-.container_ligthbox{
+.main_content{
     position: relative;
+}
+
+.container_ligthbox{
+    height: 90vh;
 }
 
 /*******************************/
@@ -323,6 +327,7 @@ textarea {
 @media screen and (min-width: 700px) {
     .current_picture{
         height: 90vh;
+        width: auto;
     }
 }
 
