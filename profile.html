@@ -17,13 +17,17 @@
     </header>
     <section class="profile">
         <div class="info_user">
-            <h1 id="name"></h1>
+            <span class="name_btn_container">
+                <h1 id="name"></h1>
+                <a id="btn_contact_form" class="btn_contact_form">Contactez-moi</a>
+            </span>
             <h4 id="city"></h4>
             <p id="tagline"></p>
             <div class="tags">
                
             </div>
         </div>
+        
         <div class="profile_img">
             <div class="container_img">
                 <img id="img" src="" alt="Photo de profile du photographe">
@@ -43,11 +47,33 @@
         
     </section>
 
-    <!-- <section id="contact_form">
-        <form id="form_body">
-            <h1>Contactez-moi <span id="photographer_name"></span></h1>
-        </form>
-    </section> -->
+    <section class="modal_background" id="contact_form">
+        <div class="modal_body">
+            <form id="form_body">
+                <h1>Contactez-moi <span id="photographer_name"></span></h1>
+                <span id="close_form">+</span>
+
+                <span class="group_input">
+                    <Label for="prenom">Prénom</Label>
+                    <input type="text" name="prenom">
+                </span>
+                <span class="group_input">
+                    <Label for="nom">Nom</Label>
+                    <input type="text" name="nom">
+                </span>
+                <span class="group_input">
+                    <Label for="email">Email</Label>
+                    <input type="text" name="email">
+                </span>
+                <span class="group_input">
+                    <Label for="message">Message</Label>
+                    <textarea  rows="10" type="text" name="message"></textarea>
+                </span>
+                <button class="send_msg" type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+    
     <section id="price_by_day">
         <div class="price_container">
             <p id="total_likes"></p>

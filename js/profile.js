@@ -2,7 +2,8 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userId = urlParams.get('i');
 const selectInputDom = document.getElementById("sort_input");
-
+const btnContactDom = document.getElementById('btn_contact_form');
+const btnContactClose = document.getElementById('close_form');
 
 
 function sort_by_likes (a,b) {
@@ -147,6 +148,8 @@ function increase_likes () {
             nb = parseInt(element.innerHTML);
             nb+=1;
             element.innerHTML = nb;
+
+            document.getElementById("total_likes").innerHTML = parseInt(document.getElementById("total_likes").innerHTML)+1;
         });
     
     }
@@ -159,6 +162,14 @@ selectInputDom.addEventListener("change", () => {
     });
 })
 
+
+btnContactDom.addEventListener("click", () => {
+    document.getElementById("contact_form").style.display = "flex";
+})
+
+btnContactClose.addEventListener("click", () => {
+    document.getElementById("contact_form").style.display = "none";
+})
 
 
 send_media_to_html().then(() => {

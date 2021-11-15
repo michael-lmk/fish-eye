@@ -21,7 +21,7 @@ figure {
 }
 
 .profile h1 {
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 20px;
     color: #D3573C;
 }
@@ -67,10 +67,26 @@ figure {
 }
 
 #tagline{
-    font-size: 15px;
+    font-size: 12px;
     color: gray;
 }
 
+.name_btn_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn_contact_form{
+    min-width: 95px;
+    background-color: #901C1C;
+    height: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    color: white;
+    margin-left: 3em;
+    cursor: pointer;
+}
 /*************************/
 /******** Album **********/
 /*************************/
@@ -149,10 +165,10 @@ select{
 .container_likes{
     cursor: pointer;
 }
+
 /*****************************/
 /****** price_container ******/
 /*****************************/
-
 
 .price_container{
     display: flex;
@@ -173,15 +189,102 @@ select{
     display: flex;
 }
 
+
+
+/*******************************/
+/******* contact_form **********/
+/*******************************/
+
+.modal_background{
+    display: none;
+    position: fixed;
+    flex: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(131, 131, 131, 0.5);
+  
+}
+
+.modal_body{
+  
+    background-color: #DB8876;
+}
+
+#form_body{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 10px;
+    width: 25em;
+}
+#form_body > h1 {
+    font-size: 25px;
+}
+
+#form_body > .group_input{
+    margin: 8px;
+    font-size: 20px;
+}
+
+.group_input{
+    display: flex;
+    flex-direction: column;
+}
+
+.group_input > input {
+    border-radius: 5px;
+    border: none;
+    height: 28px;
+
+}
+textarea {
+    border-radius: 5px;
+    border: none;
+}
+
+#close_form{
+    font-size: 2.5em!important;
+    font-weight: 1000;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    cursor: pointer;
+}
+
+.send_msg{
+    background-color: #901C1C;
+    color: white;
+    border: none;
+    width: min-content;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+
+
+/*******************************/
+/******** Média query **********/
+/*******************************/
+
+@media screen and (max-width: 950px) {
+    .profile{
+        margin:0;
+    }
+}
 @media screen and (max-width: 700px) {
     .profile{
         background-color: white; 
-        margin: 0; 
         padding: 0;
     }
     .container_img img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         margin: 0;
     }
     .picture_container{
@@ -189,7 +292,7 @@ select{
         width: 100%!important;
     }
     .profile h1 {
-        font-size: 40px;
+        font-size: 30px;
         margin: 0;
     }
     .profile h4 {
@@ -199,7 +302,7 @@ select{
     .tags{
         display: flex;
         flex-wrap: wrap;
-        font-size: 13px;
+        font-size: 11px;
     }
     figure > img {
         width: 50%;
@@ -219,4 +322,20 @@ select{
     .sort{
         margin-left: 0;
     }
+    .btn_contact_form{
+        position: fixed;
+        bottom: 10px;
+        left: 25%;
+    }
+    .group_input > input, textarea{
+        width: 90vw;
+    }
+    .modal_body{
+        width: 100vw;
+        height: 100vh;
+    }
+    #close_form{
+        right: 55px;
+    }
 }
+
