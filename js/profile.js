@@ -4,6 +4,8 @@ const userId = urlParams.get('i');
 const selectInputDom = document.getElementById("sort_input");
 const btnContactDom = document.getElementById('btn_contact_form');
 const btnContactClose = document.getElementById('close_form');
+const btnCloseLightbox = document.getElementById('close_form_2');
+const imagesDom = document.getElementsByClassName("picture_container");
 
 
 function sort_by_likes (a,b) {
@@ -27,7 +29,10 @@ async function get_data_medias(order_by) {
 
     const mediasOfUser = datas.media.filter(element => element.photographerId == userId);
 
-    mediasOfUser.sort(order_by);
+    if (order_by) {
+        mediasOfUser.sort(order_by);
+    }
+   
     
     return mediasOfUser;
     
@@ -98,7 +103,7 @@ async function send_media_to_html (orderParam) {
         count_likes += media.likes;
 
         mediasDom.innerHTML += `
-            <div class="picture_container">
+            <div class="picture_container" data-id="${media.id}">
             ${
                 media.image?
                     `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt=""></img>`
@@ -138,6 +143,8 @@ async function send_media_to_html (orderParam) {
     
 }
 
+
+
 function increase_likes () {
     const likesDom = document.getElementsByClassName("container_likes");
 
@@ -155,10 +162,23 @@ function increase_likes () {
     }
 }
 
+async function img_event_click () {
+    const medias = await get_data_medias();
+
+    for (let index = 0; index < imagesDom.length; index++) {
+    
+        imagesDom[index].addEventListener("click", () => {
+            document.getElementById("visualisation").style.display = "block";
+        });
+    
+    }
+}
+
 selectInputDom.addEventListener("change", () => {
     
     send_media_to_html(selectInputDom.value).then(() => {
         increase_likes();
+        img_event_click();
     });
 })
 
@@ -171,9 +191,16 @@ btnContactClose.addEventListener("click", () => {
     document.getElementById("contact_form").style.display = "none";
 })
 
+btnCloseLightbox.addEventListener("click", () => {
+    document.getElementById("visualisation").style.display = "none";
+})
+
 
 send_media_to_html().then(() => {
     increase_likes();
+    img_event_click();
 });
 
 send_Profile_to_html();
+
+imagesDom

@@ -266,7 +266,49 @@ textarea {
     border-radius: 5px;
 }
 
+/*******************************/
+/******** prévisualisé *********/
+/*******************************/
+#visualisation{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    background-color: white;
+}
 
+.modal_body_2{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current_picture{
+    flex: 1;
+    height: 12em;
+}
+
+.previous, .next {
+    font-size: 10em;
+    color: #901C1C;
+}
+
+#close_form_2{
+    font-size: 2.5em!important;
+    font-weight: 1000;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    color: #901C1C;
+    cursor: pointer;
+}
+
+.container_ligthbox{
+    position: relative;
+}
 
 /*******************************/
 /******** Média query **********/
@@ -277,6 +319,13 @@ textarea {
         margin:0;
     }
 }
+
+@media screen and (min-width: 700px) {
+    .current_picture{
+        height: 90vh;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .profile{
         background-color: white; 
