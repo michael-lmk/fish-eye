@@ -7,6 +7,7 @@ const btnContactClose = document.getElementById('close_form');
 const btnCloseLightbox = document.getElementById('close_form_2');
 const imagesDom = document.getElementsByClassName("picture");
 
+//savegarde des données pour ne pas devoir refaire la requete
 let saveUser = {};
 let albumMediaSave = [];
 let currentIndexImg = 0;
@@ -40,6 +41,7 @@ async function get_data_medias(order_by) {
     }
    
     albumMediaSave = mediasOfUser;
+
     return mediasOfUser;
     
 }
@@ -64,7 +66,7 @@ async function send_Profile_to_html() {
 
     // Ajout du profile dans le html 
     document.getElementById("name").innerText = user.name ;
-    document.getElementById("img").src = '/img/Photographers ID Photos/'+user.portrait; 
+    document.getElementById("img").src = '/img/photo_profile/'+user.portrait; 
     document.getElementById("city").innerText = user.city+", "+user.country;
     document.getElementById("tagline").innerText = user.tagline;
     document.getElementById("price").innerHTML = user.price + "€ / jour";
@@ -128,11 +130,7 @@ async function send_media_to_html (orderParam) {
                     <div class="container_likes">
                         <p class="nb_likes">${media.likes}</p>
                         <div class="svg_container">
-                            <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" viewBox="0 0 720 720" version="1.0" inkscape:version="0.91 r13725">
-                                <g id="layer1">
-                                    <path id="path2433" style="fill:#901C1C" d="m180 45c-99.36 0-180 80.64-180 180 0 47.8 18.66 91.26 49.094 123.5l309.91 326.5 315.34-329.31c31.32-38.01 41.85-70.21 45.66-120.69 0-99.36-80.64-180-180-180-91.55 0-167.21 68.48-178.53 156.97h-2.94c-11.32-88.49-86.98-156.97-178.53-156.97z"/>
-                                </g>
-                            </svg>
+                           <img src="../img/likes.svg" alt="likes">
                         </div>
                     </div>
                 </div>
@@ -142,7 +140,7 @@ async function send_media_to_html (orderParam) {
     }
 
     document.getElementById("total_likes").innerHTML = count_likes+`<div class="svg_container svg_dir_row">
-                            <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" viewBox="0 0 720 720" version="1.0" inkscape:version="0.91 r13725">
+                            <svg role="img" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" viewBox="0 0 720 720" version="1.0" inkscape:version="0.91 r13725">
                                 <g id="layer1">
                                     <path id="path2433" style="fill:#000000" d="m180 45c-99.36 0-180 80.64-180 180 0 47.8 18.66 91.26 49.094 123.5l309.91 326.5 315.34-329.31c31.32-38.01 41.85-70.21 45.66-120.69 0-99.36-80.64-180-180-180-91.55 0-167.21 68.48-178.53 156.97h-2.94c-11.32-88.49-86.98-156.97-178.53-156.97z"/>
                                 </g>
@@ -199,29 +197,8 @@ async function img_event_click () {
     }
 }
 
-document.getElementsByClassName("next")[0].addEventListener("click", () => {
-    
-    if (currentIndexImg === 0) {
-        currentIndexImg = albumMediaSave.length-1;
-    }else{
-        currentIndexImg--;
-    }
-
-    if (albumMediaSave[currentIndexImg].image) {
-        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
-    }else{
-        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
-            <video class="current_picture" controls  autoplay="true">
-                <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
-
-                Sorry, your browser doesn't support embedded videos.
-            </video>`;
-    }
-    
-})
-
-document.getElementsByClassName("previous")[0].addEventListener("click", () => {
-    
+function previousPicture() {
+    console.log();
     if (currentIndexImg === albumMediaSave.length-1) {
         currentIndexImg = 0;
     }else{
@@ -238,8 +215,36 @@ document.getElementsByClassName("previous")[0].addEventListener("click", () => {
                 Sorry, your browser doesn't support embedded videos.
             </video>`;
     }
-    
-})
+}
+
+
+function nextPicture() {
+     
+    if (currentIndexImg === 0) {
+        currentIndexImg = albumMediaSave.length-1;
+    }else{
+        currentIndexImg--;
+    }
+
+    if (albumMediaSave[currentIndexImg].image) {
+        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
+    }else{
+        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
+            <video class="current_picture" controls  autoplay="true">
+                <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
+
+                Sorry, your browser doesn't support embedded videos.
+            </video>`;
+    }
+}
+
+
+//Ecouteur d'evenement
+document.getElementsByClassName("next")[0].addEventListener( "click", nextPicture );
+document.addEventListener("keydown", (e) => { e.key === "ArrowLeft"? nextPicture() : null });
+
+document.getElementsByClassName("previous")[0].addEventListener("click", previousPicture);
+document.addEventListener("keydown", (e) => {e.key === "ArrowRight"? previousPicture() : null});
 
 selectInputDom.addEventListener("change", () => {
     
@@ -250,7 +255,8 @@ selectInputDom.addEventListener("change", () => {
 })
 
 
-btnContactDom.addEventListener("click", () => {
+btnContactDom.addEventListener("click", (event) => {
+    event.preventDefault();
     document.getElementById("contact_form").style.display = "flex";
     document.getElementById("photographer_name").innerText = saveUser.name;
 })
