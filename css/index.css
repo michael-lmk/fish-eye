@@ -71,13 +71,14 @@ figure {
     justify-content: center;
     align-items: center;
     color: #901C1C;
-    border: 1px solid #901C1C;
+    border: 1px solid #c4c4c4;
     padding: 5px;
     border-radius: 25px;
     margin: 5px 2px 5px 2px;
     text-decoration: none;
     font-weight: bold;
     font-size: 12px;
+    transition: 0.3s;
 } 
 
 
@@ -145,4 +146,10 @@ article .link {
 article h4{
     margin: 5px;
     color: #901C1C;
+}
+
+
+.tags a:hover {
+    color: white;
+    background-color: #901C1C;
 }

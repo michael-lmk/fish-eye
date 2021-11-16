@@ -52,12 +52,13 @@ figure {
 
 .tags a {
     color: #901C1C;
-    border: 1px solid #901C1C;
+    border: 1px solid #c4c4c4;
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     margin: 5px 2px 5px 2px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.5s;
 
 }
 
@@ -86,6 +87,7 @@ figure {
     color: white;
     margin-left: 3em;
     cursor: pointer;
+    transition: 0.3s;
 }
 /*************************/
 /******** Album **********/
@@ -110,6 +112,7 @@ figure {
     width: 100%;
     height: 95%;
     border-radius: 5px;
+    cursor: pointer;
 
 }
 
@@ -179,7 +182,7 @@ select{
     width: 14em;
     height: 70px;
     border-radius: 5px 5px 0 0;
-    background-color: #D3573C;
+    background-color: #DB8876;
     color: rgba(34, 29, 29, 0.815);
     font-size: 25px;
     font-weight: 800;
@@ -266,6 +269,52 @@ textarea {
     border-radius: 5px;
 }
 
+/*******************************/
+/******** prévisualisé *********/
+/*******************************/
+#visualisation{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    background-color: white;
+}
+
+.modal_body_2{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current_picture,picture{
+    flex: 1;
+    width: 100%;
+    max-height: 90vh;
+}
+
+.previous, .next {
+    font-size: 10em;
+    color: #901C1C;
+    cursor: pointer;
+}
+
+#close_form_2{
+    font-size: 2.5em!important;
+    font-weight: 1000;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    color: #901C1C;
+    cursor: pointer;
+}
+
+.main_content{
+    position: relative;
+}
+
 
 
 /*******************************/
@@ -277,6 +326,14 @@ textarea {
         margin:0;
     }
 }
+
+@media screen and (min-width: 700px) {
+    .current_picture{
+        height: 90vh;
+        width: auto;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .profile{
         background-color: white; 
@@ -339,3 +396,17 @@ textarea {
     }
 }
 
+/**********************/
+/**** hover/focus *****/
+/**********************/
+
+.btn_contact_form:hover{
+    color: black;
+    background-color: #DB8876;
+}
+
+.tags a:hover {
+    color: white;
+    /* border: 1px solid #525252; */
+    background-color: #901C1C;
+}
