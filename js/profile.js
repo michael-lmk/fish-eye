@@ -269,6 +269,10 @@ btnCloseLightbox.addEventListener("click", () => {
     document.getElementById("visualisation").style.display = "none";
 })
 
+document.addEventListener("keydown", (e) => {
+    e.key === "Escape" ? document.getElementById("visualisation").style.display = "none" : null ;
+})
+
 
 send_media_to_html().then(() => {
     increase_likes();
@@ -276,5 +280,3 @@ send_media_to_html().then(() => {
 });
 
 send_Profile_to_html();
-
-imagesDom

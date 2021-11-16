@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+body{
+    font-family: DM Sans;
+    margin: 1em 7em 1em 7em;
+}
+
 
 header{
     display: flex;
-    margin-left: 50px;
+    margin-bottom: 40px;
 }
 
 figure {
     max-width: 20em;
+    margin: 0;
 }
 
 
@@ -16,7 +24,6 @@ figure {
     display: flex;
     justify-content: space-between;
     background-color: #fafafa;
-    margin: 10px 7.5em 10px 7.5em;
     padding: 30px;
 }
 
@@ -98,14 +105,13 @@ figure {
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .picture_container{
-    width: 25%;
-    padding: 1em;
-    height: 16em;
-    min-width: 16em;
+    width: 300px;
+    margin-bottom: 1em;
+    height: 350px;
 }
 
 .picture{
@@ -155,7 +161,7 @@ figure {
 
 .sort{
     display: flex;
-    margin-left: 7.5em;
+    margin: 2em 0 2em 0;
 }
 
 select{
@@ -164,6 +170,8 @@ select{
     border-radius: 5px;
     margin-left: 10px;
     border: none;
+
+    
 }
 
 .container_likes{
@@ -336,9 +344,15 @@ textarea {
 }
 
 @media screen and (max-width: 700px) {
+    body{
+        margin: 20px;
+    }
     .profile{
         background-color: white; 
         padding: 0;
+    }
+    .profile_img{
+        align-items: flex-start;
     }
     .container_img img {
         width: 120px;
