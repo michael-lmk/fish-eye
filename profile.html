@@ -8,30 +8,33 @@
     <title>Profile</title>
 </head>
 <body>
-    <header>
+    <header role=”banner”>
         <a href="index.html">
             <figure class="logo">
                 <img src="./img/logo/logo-fish-eye.png" alt="Fisheye page d'accueil">
             </figure>
         </a>
     </header>
-    <section class="profile">
-        <div class="info_user">
-            <span class="name_btn_container">
-                <h1 id="name"></h1>
-                <a id="btn_contact_form" class="btn_contact_form">Contactez-moi</a>
-            </span>
-            <h4 id="city"></h4>
-            <p id="tagline"></p>
-            <div class="tags">
-               
+    <main>
+        <section class="profile">
+            <div class="info_user">
+                <span class="name_btn_container">
+                    <h1 id="name"></h1>
+                    <a id="btn_contact_form" class="btn_contact_form">Contactez-moi</a>
+                </span>
+                <h4 id="city"></h4>
+                <p id="tagline"></p>
+                <nav role=”navigation” class="tags">
+                
+                </nav>
             </div>
-        </div>
-        
-        <div class="profile_img">
-            <div class="container_img">
-                <img id="img" src="" alt="Photo de profile du photographe">
+            
+            <div class="profile_img">
+                <div class="container_img">
+                    <img id="img" src="" alt="Photo de profile du photographe">
+                </div>
             </div>
+
         </div>
     </section>
     <section class="sort">
@@ -48,6 +51,10 @@
         
     </section>
 
+        <section id="album">
+            
+        </section>
+    </main>
     <section class="modal_background" id="contact_form">
         <div class="modal_body">
             <form id="form_body">
