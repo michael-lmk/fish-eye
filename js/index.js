@@ -1,4 +1,9 @@
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const tag = urlParams.get('tag');
+
+
 async function get_data_photographers() {
     const response = await fetch('../json/data.json');
     const datas = await response.json();
@@ -16,12 +21,14 @@ function appendEvent() {
         element.addEventListener("click", (e) => {
             e.preventDefault();
             build_card(element.innerText.slice(1));
+            history.pushState(null, null, "/index.html");
         })
     }
+    
 }
 
 async function build_card (sort) {
- 
+    
     
     // recuperation des photographes 
     const datas = await get_data_photographers();
@@ -64,7 +71,7 @@ async function build_card (sort) {
         
       
     }
-
+    
     appendEvent();
     
 }
@@ -73,4 +80,4 @@ async function build_card (sort) {
 
 
 
-build_card();
+build_card(tag);

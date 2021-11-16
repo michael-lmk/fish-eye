@@ -61,7 +61,7 @@ async function send_Profile_to_html() {
 
     for (let index = 0; index < tagsArray.length; index++) {
         const tag = tagsArray[index];
-        tagsDOM.innerHTML += `<a href="">#${tag}</a>`
+        tagsDOM.innerHTML += `<a href="index.html?tag=${tag}">#${tag}</a>`
 
     }
 
