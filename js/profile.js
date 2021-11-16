@@ -7,9 +7,11 @@ const btnContactClose = document.getElementById('close_form');
 const btnCloseLightbox = document.getElementById('close_form_2');
 const imagesDom = document.getElementsByClassName("picture");
 
-
+let saveUser = {};
 let albumMediaSave = [];
 let currentIndexImg = 0;
+
+
 
 
 function sort_by_likes (a,b) {
@@ -57,6 +59,8 @@ async function get_data_photographer() {
 // envoie les données du profil
 async function send_Profile_to_html() {
     const user = await get_data_photographer();
+
+    saveUser = user;
 
     // Ajout du profile dans le html 
     document.getElementById("name").innerText = user.name ;
@@ -112,8 +116,8 @@ async function send_media_to_html (orderParam) {
                 media.image?
                     `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt=""  data-id="${media.id}"></img>`
                 :
-                    `<video class="picture" controls width="250" data-id="${media.id}">
-                        <source src="../img/${media.photographerId}/${media.video}" type="video/mp4" ">
+                    `<video class="picture" controls data-id="${media.id}" preload="metadata">
+                        <source src="../img/${media.photographerId}/${media.video}#t=1" type="video/mp4" ">
 
                         Sorry, your browser doesn't support embedded videos.
                     </video>`
@@ -183,7 +187,7 @@ async function img_event_click () {
                 document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
             }else{
                 document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
-                    <video class="picture" controls width="250" autoplay="true">
+                    <video class="current_picture" controls autoplay="true">
                         <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
         
                         Sorry, your browser doesn't support embedded videos.
@@ -207,7 +211,7 @@ document.getElementsByClassName("next")[0].addEventListener("click", () => {
         document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
     }else{
         document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
-            <video class="current_picture" controls width="250"  autoplay="true">
+            <video class="current_picture" controls  autoplay="true">
                 <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
 
                 Sorry, your browser doesn't support embedded videos.
@@ -228,7 +232,7 @@ document.getElementsByClassName("previous")[0].addEventListener("click", () => {
         document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
     }else{
         document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
-            <video class="picture" controls width="250">
+            <video class="current_picture" controls width="250">
                 <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
 
                 Sorry, your browser doesn't support embedded videos.
@@ -248,6 +252,7 @@ selectInputDom.addEventListener("change", () => {
 
 btnContactDom.addEventListener("click", () => {
     document.getElementById("contact_form").style.display = "flex";
+    document.getElementById("photographer_name").innerText = saveUser.name;
 })
 
 btnContactClose.addEventListener("click", () => {
