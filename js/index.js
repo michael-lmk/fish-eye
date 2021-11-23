@@ -20,6 +20,9 @@ function appendEvent() {
         const element = tags_DOM[index];
         element.addEventListener("click", (e) => {
             e.preventDefault();
+            
+            e.target.setAttribute("aria-current", "page");
+
             build_card(element.innerText.slice(1));
             history.pushState(null, null, "/index.html");
         })
@@ -55,14 +58,14 @@ async function build_card (sort) {
                 <h4>${data.city}, ${data.country}</h4>
                 <p>${data.tagline}</p>
                 <p>${data.price}€/jour</p>
-                <div class="tags">`;
+                <ul class="tags" aria-label="Navigation Secondaire">`;
 
             for (let index = 0; index < data.tags.length; index++) {
                 const element = data.tags[index];
-                html+= `<a class="sort_by_tag" href="">#${element}</a>`;
+                html+= `<li><a class="sort_by_tag ${element}" href="">#${element}</a></li>`;
             }
 
-            html +=`</div>
+            html +=`</ul>
             </article>
             `;
             document.getElementById("main").innerHTML += html;

@@ -1,6 +1,6 @@
 
 body{
-    margin: 0px;
+    margin: 0 5em;
 }
 
 a{
@@ -19,11 +19,13 @@ header{
 }
 
 header > a {
+    display: flex;
     flex: 1;
+    justify-content: center;
 }
 
 .logo img{
-    width: 110%;
+    width: 130%;
 }
 
 /* .logo {
@@ -60,6 +62,15 @@ nav{
     figure{
         margin: 1em;
     }
+    body{
+        margin: 0;
+    }
+    main {
+        justify-content: center!important;
+    }
+    .logo img {
+        width: 115%;
+    }
 }
 
 figure {
@@ -81,8 +92,14 @@ figure {
     transition: 0.3s;
 } 
 
+ul{
+    list-style-type: none;
+    padding: 0;
+}
 
 header h1 {
+    display: flex;
+    justify-content: center;
     flex: 1;
     color: #901C1C;
     font-size: 30px;
@@ -95,7 +112,7 @@ header h1 {
 main{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 article{

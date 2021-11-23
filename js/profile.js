@@ -6,6 +6,7 @@ const btnContactDom = document.getElementById('btn_contact_form');
 const btnContactClose = document.getElementById('close_form');
 const btnCloseLightbox = document.getElementById('close_form_2');
 const imagesDom = document.getElementsByClassName("picture");
+const sendMsgForm = document.getElementsByClassName("send_msg")[0];
 
 //savegarde des données pour ne pas devoir refaire la requete
 let saveUser = {};
@@ -109,16 +110,16 @@ async function send_media_to_html (orderParam) {
 
     for (let index = 0; index < medias.length; index++) {
         const media = medias[index];
-        
+        var tabindex = 0; 
         count_likes += media.likes;
 
         mediasDom.innerHTML += `
             <div class="picture_container">
             ${
                 media.image?
-                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt=""  data-id="${media.id}"></img>`
+                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt="titre de l'image : ${media.title}"  data-id="${media.id}"></img>`
                 :
-                    `<video class="picture" controls data-id="${media.id}" preload="metadata">
+                    `<video tabindex="${tabindex}" class="picture" controls data-id="${media.id}" preload="metadata">
                         <source src="../img/${media.photographerId}/${media.video}#t=1" type="video/mp4" ">
 
                         Sorry, your browser doesn't support embedded videos.
@@ -127,7 +128,7 @@ async function send_media_to_html (orderParam) {
                 
                 <div class="desc">
                     <p class="media_title">${media.title}</p>
-                    <div class="container_likes">
+                    <div tabindex="${tabindex}" class="container_likes">
                         <p class="nb_likes">${media.likes}</p>
                         <div class="svg_container">
                            <img src="../img/likes.svg" alt="likes">
@@ -136,16 +137,10 @@ async function send_media_to_html (orderParam) {
                 </div>
             </div>
         `;
-            
+        tabindex++;
     }
 
-    document.getElementById("total_likes").innerHTML = count_likes+`<div class="svg_container svg_dir_row">
-                            <svg role="img" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" viewBox="0 0 720 720" version="1.0" inkscape:version="0.91 r13725">
-                                <g id="layer1">
-                                    <path id="path2433" style="fill:#000000" d="m180 45c-99.36 0-180 80.64-180 180 0 47.8 18.66 91.26 49.094 123.5l309.91 326.5 315.34-329.31c31.32-38.01 41.85-70.21 45.66-120.69 0-99.36-80.64-180-180-180-91.55 0-167.21 68.48-178.53 156.97h-2.94c-11.32-88.49-86.98-156.97-178.53-156.97z"/>
-                                </g>
-                            </svg>
-                        </div>`;
+    document.getElementById("total_likes").innerHTML = count_likes;
     
 }
 
@@ -185,7 +180,7 @@ async function img_event_click () {
                 document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
             }else{
                 document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
-                    <video class="current_picture" controls autoplay="true">
+                    <video class="current_picture" controls>
                         <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
         
                         Sorry, your browser doesn't support embedded videos.
@@ -238,6 +233,10 @@ function nextPicture() {
     }
 }
 
+function send_msg () {
+    
+}
+
 
 //Ecouteur d'evenement
 document.getElementsByClassName("next")[0].addEventListener( "click", nextPicture );
@@ -271,6 +270,19 @@ btnCloseLightbox.addEventListener("click", () => {
 
 document.addEventListener("keydown", (e) => {
     e.key === "Escape" ? document.getElementById("visualisation").style.display = "none" : null ;
+})
+
+sendMsgForm.addEventListener("click", (e) => {
+    e.preventDefault();
+    var results = [];
+    var formData = document.querySelectorAll('#form_body input, #form_body textarea');
+    
+    formData.forEach((element) => {
+        results[element.id] =  element.value;
+    })
+    
+    console.log(results); 
+    
 })
 
 
