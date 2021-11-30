@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/profile.css">
-    <title>Profile</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/profile.css" />
+    <title>FishEye - Profile</title>
 </head>
+
 <body>
-    <header role=”banner”>
+    <header role="”banner”">
         <a href="index.html">
             <figure class="logo">
-                <img role="img" src="./img/logo/logo.svg" alt="Fisheye page d'accueil">
+                <img role="img" src="./img/logo/logo.svg" alt="logo de fish eye" />
+                <title>logo de fish eye</title>
             </figure>
         </a>
     </header>
@@ -20,78 +23,74 @@
             <div class="info_user">
                 <span class="name_btn_container">
                     <h1 id="name"></h1>
-                    <a href=""  id="btn_contact_form" class="btn_contact_form">Contactez-moi</a>
+                    <a href="" id="btn_contact_form" class="btn_contact_form">Contactez-moi</a>
                 </span>
-                <h4 id="city"></h4>
+                <h2 id="city"></h2>
                 <p id="tagline"></p>
-                <nav role=”navigation” class="tags">
-                
-                </nav>
+                <nav role="”navigation”" class="tags"></nav>
             </div>
-            
+
             <div class="profile_img">
                 <div class="container_img">
-                    <img id="img" src="" alt="Photo de profile du photographe">
+                    <img id="img" src="" alt="Photo de profile du photographe" />
                 </div>
             </div>
-
-        </div>
-    </section>
-    <section class="sort">
-        <p>Trier par :</p>
-        <select name="" id="sort_input">
-            <option value="1">Popularité</option>
-            <option value="2">Date</option>
-            <option value="3">Titre</option>
-        </select>
-        <i class="caret"></i>
-    </section>
-
-    <section id="album">
-        
-    </section>
-
-        <section id="album">
-            
         </section>
+        <section class="sort">
+            <label for="sort_input">Trier par :</label>
+            <select name="" id="sort_input">
+                <option value="1">Popularité</option>
+                <option value="2">Date</option>
+                <option value="3">Titre</option>
+            </select>
+        </section>
+
+        <section id="album"></section>
     </main>
     <section class="modal_background" id="contact_form">
         <div class="modal_body">
             <form id="form_body">
-                <h1>Contactez-moi <br><span id="photographer_name">fff</span></h1>
+                <h1>Contactez-moi <br /><span id="photographer_name">fff</span></h1>
                 <span id="close_form">+</span>
 
                 <span class="group_input">
-                    <Label for="prenom">Prénom</Label>
-                    <input type="text" id="prenom" name="prenom">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" />
                 </span>
                 <span class="group_input">
-                    <Label for="nom">Nom</Label>
-                    <input type="text" id="nom" name="nom">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" />
                 </span>
                 <span class="group_input">
-                    <Label for="email">Email</Label>
-                    <input type="text" id="email" name="email">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" />
                 </span>
                 <span class="group_input">
-                    <Label for="message">Message</Label>
-                    <textarea  rows="10" type="text" id="message" name="message"></textarea>
+                    <label for="message">Message</label>
+                    <textarea rows="10" type="text" id="message" name="message"></textarea>
                 </span>
                 <button class="send_msg" type="submit">Envoyer</button>
             </form>
         </div>
     </section>
-    
+
     <section id="price_by_day">
         <div class="price_container">
             <div class="left_side_likes">
                 <p id="total_likes"></p>
                 <div class="svg_container svg_dir_row">
-                    <svg role="img" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" viewBox="0 0 720 720" version="1.0" inkscape:version="0.91 r13725">
+                    <svg role="img" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2"
+                        viewBox="0 0 720 720" version="1.0" inkscape:version="0.91 r13725">
                         <title id="title">Likes</title>
-                        <desc id="description">Icone des likes </desc>
+                        <desc id="description">Icone des likes</desc>
                         <g id="layer1">
-                            <path id="path2433" style="fill:#221d1dde" d="m180 45c-99.36 0-180 80.64-180 180 0 47.8 18.66 91.26 49.094 123.5l309.91 326.5 315.34-329.31c31.32-38.01 41.85-70.21 45.66-120.69 0-99.36-80.64-180-180-180-91.55 0-167.21 68.48-178.53 156.97h-2.94c-11.32-88.49-86.98-156.97-178.53-156.97z"/>
+                            <path id="path2433" style="fill: #221d1dde"
+                                d="m180 45c-99.36 0-180 80.64-180 180 0 47.8 18.66 91.26 49.094 123.5l309.91 326.5 315.34-329.31c31.32-38.01 41.85-70.21 45.66-120.69 0-99.36-80.64-180-180-180-91.55 0-167.21 68.48-178.53 156.97h-2.94c-11.32-88.49-86.98-156.97-178.53-156.97z" />
                         </g>
                     </svg>
                 </div>
@@ -101,21 +100,18 @@
     </section>
 
     <section id="visualisation">
-      
         <div class="modal_body_2">
-            
             <span class="next">&lsaquo;</span>
             <div class="main_content">
                 <div class="container_ligthbox">
-                    <img class="current_picture" src="./img/82/Art_Mine.jpg" alt="">
-                   
-                </div> 
+                    <img class="current_picture" src="./img/82/Art_Mine.jpg" alt="" />
+                </div>
                 <span id="close_form_2">+</span>
             </div>
-            <span class="previous">&rsaquo;</span> 
-            
+            <span class="previous">&rsaquo;</span>
         </div>
     </section>
 </body>
 <script type="text/javascript" src="./js/profile.js"></script>
+
 </html>

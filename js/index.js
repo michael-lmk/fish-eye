@@ -51,11 +51,11 @@ async function build_card (sort) {
             <article data-id="${data.id}">
                 <a class="link" href="./profile.html?i=${data.id}">
                     <div class="container_img">
-                        <img src="./img/photo_profile/${data.portrait}" alt="">
+                        <img src="./img/photo_profile/${data.portrait}" alt="Photo du photographe ${data.name}">
                     </div>
                     <h2>${data.name}</h2>
                 </a>
-                <h4>${data.city}, ${data.country}</h4>
+                <h3>${data.city}, ${data.country}</h3>
                 <p>${data.tagline}</p>
                 <p>${data.price}€/jour</p>
                 <ul class="tags" aria-label="Navigation Secondaire">`;

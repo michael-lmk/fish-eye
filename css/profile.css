@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
+html{
+    display: flex;
+    justify-content: center;
+}
+
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: DM Sans;
     margin: 1em 7em 4em 7em;
+    max-width: 1499px;
 }
 
 
@@ -33,7 +42,7 @@ figure {
     color: #D3573C;
 }
 
-.profile h4{
+.profile h2{
     font-size: 25px;
     color: #901C1C;
 }
