@@ -18,7 +18,7 @@
             </figure>
         </a>
     </header>
-    <main>
+    <main id="main">
         <section class="profile">
             <div class="info_user">
                 <span class="name_btn_container">
@@ -50,7 +50,7 @@
     <section class="modal_background" id="contact_form">
         <div class="modal_body">
             <form id="form_body">
-                <h1>Contactez-moi <br /><span id="photographer_name">fff</span></h1>
+                <h1>Contactez-moi <br /><span id="photographer_name"></span></h1>
                 <span id="close_form">+</span>
 
                 <span class="group_input">
@@ -69,7 +69,7 @@
                     <label for="message">Message</label>
                     <textarea rows="10" type="text" id="message" name="message"></textarea>
                 </span>
-                <button class="send_msg" type="submit">Envoyer</button>
+                <button aria-label="Envoyer" class="send_msg" type="submit">Envoyer</button>
             </form>
         </div>
     </section>
@@ -86,8 +86,8 @@
                         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
                         xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2"
                         viewBox="0 0 720 720" version="1.0" inkscape:version="0.91 r13725">
-                        <title id="title">Likes</title>
-                        <desc id="description">Icone des likes</desc>
+                        <!-- <title id="title">Likes</title>
+                        <desc id="description">Icone des likes</desc> -->
                         <g id="layer1">
                             <path id="path2433" style="fill: #221d1dde"
                                 d="m180 45c-99.36 0-180 80.64-180 180 0 47.8 18.66 91.26 49.094 123.5l309.91 326.5 315.34-329.31c31.32-38.01 41.85-70.21 45.66-120.69 0-99.36-80.64-180-180-180-91.55 0-167.21 68.48-178.53 156.97h-2.94c-11.32-88.49-86.98-156.97-178.53-156.97z" />
@@ -101,14 +101,14 @@
 
     <section id="visualisation">
         <div class="modal_body_2">
-            <span class="next">&lsaquo;</span>
+            <button aria-label="Image précédente" tabindex="1" class="next">&lsaquo;</button>
             <div class="main_content">
                 <div class="container_ligthbox">
-                    <img class="current_picture" src="./img/82/Art_Mine.jpg" alt="" />
+                    <img class="current_picture" src="" alt="" />
                 </div>
-                <span id="close_form_2">+</span>
+                <button aria-label="Fermer modal" tabindex="3" id="close_form_2">+</button>
             </div>
-            <span class="previous">&rsaquo;</span>
+            <button aria-label="Image suivante" tabindex="2" class="previous">&rsaquo;</button>
         </div>
     </section>
 </body>

@@ -5,7 +5,7 @@ const selectInputDom = document.getElementById("sort_input");
 const btnContactDom = document.getElementById('btn_contact_form');
 const btnContactClose = document.getElementById('close_form');
 const btnCloseLightbox = document.getElementById('close_form_2');
-const imagesDom = document.getElementsByClassName("picture");
+const imagesDom = document.getElementsByClassName("open_visu");
 const sendMsgForm = document.getElementsByClassName("send_msg")[0];
 
 //savegarde des données pour ne pas devoir refaire la requete
@@ -107,37 +107,38 @@ async function send_media_to_html (orderParam) {
     
     // total de likes sur l'album
     let count_likes = 0;
-
+   
     for (let index = 0; index < medias.length; index++) {
         const media = medias[index];
-        var tabindex = 0; 
+        
         count_likes += media.likes;
 
         mediasDom.innerHTML += `
             <div class="picture_container">
+            <button class="open_visu"  data-id="${media.id}">
             ${
                 media.image?
-                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt="titre de l'image : ${media.title}"  data-id="${media.id}"></img>`
+                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt="titre de la photo : ${media.title}"  />`
                 :
-                    `<video tabindex="${tabindex}" class="picture" controls data-id="${media.id}" preload="metadata">
+                    `<video  class="picture" controls data-id="${media.id}" preload="metadata">
                         <source src="../img/${media.photographerId}/${media.video}#t=1" type="video/mp4" ">
 
                         Sorry, your browser doesn't support embedded videos.
                     </video>`
             }
-                
+            </button>
                 <div class="desc">
                     <p class="media_title">${media.title}</p>
-                    <div tabindex="${tabindex}" class="container_likes">
+                    <button class="container_likes">
                         <p class="nb_likes">${media.likes}</p>
                         <div class="svg_container">
                            <img src="../img/likes.svg" alt="likes">
                         </div>
-                    </div>
+                    </button>
                 </div>
             </div>
         `;
-        tabindex++;
+       
     }
 
     document.getElementById("total_likes").innerHTML = count_likes;
@@ -171,16 +172,18 @@ async function img_event_click () {
         imagesDom[index].addEventListener("click", (event) => {
             event.preventDefault();
             document.getElementById("visualisation").style.display = "block";
+            document.getElementsByClassName("next")[0].focus();
             
             let dataId = event.currentTarget.getAttribute("data-id");
            
             currentIndexImg = albumMediaSave.findIndex((element) => dataId == element.id);
 
             if (albumMediaSave[currentIndexImg].image) {
-                document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
+                document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="Titre de la photo : ${albumMediaSave[currentIndexImg].title}">`;
             }else{
                 document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
                     <video class="current_picture" controls>
+                        <title>${albumMediaSave[currentIndexImg].title}</title>
                         <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
         
                         Sorry, your browser doesn't support embedded videos.
