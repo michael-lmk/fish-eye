@@ -118,7 +118,7 @@ async function send_media_to_html (orderParam) {
             <button class="open_visu"  data-id="${media.id}">
             ${
                 media.image?
-                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt="titre de la photo : ${media.title}"  />`
+                    `<img class="picture" src="../img/${media.photographerId}/${media.image}" class="album_img" alt="${albumMediaSave[currentIndexImg]["alt-text"]}"  />`
                 :
                     `<video  class="picture" controls data-id="${media.id}" preload="metadata">
                         <source src="../img/${media.photographerId}/${media.video}#t=1" type="video/mp4" ">
@@ -179,7 +179,7 @@ async function img_event_click () {
             currentIndexImg = albumMediaSave.findIndex((element) => dataId == element.id);
 
             if (albumMediaSave[currentIndexImg].image) {
-                document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="Titre de la photo : ${albumMediaSave[currentIndexImg].title}">`;
+                document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="${albumMediaSave[currentIndexImg]["alt-text"]}">`;
             }else{
                 document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
                     <video class="current_picture" controls>
