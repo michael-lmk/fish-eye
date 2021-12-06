@@ -51,7 +51,7 @@ async function build_card (sort) {
             <article data-id="${data.id}">
                 <a class="link" href="./profile.html?i=${data.id}">
                     <div class="container_img">
-                        <img src="./img/photo_profile/${data.portrait}" alt="Photo du photographe ${data.name}">
+                        <img src="./img/photo_profile/${data.portrait}" alt="Photo du photographe">
                     </div>
                     <h2>${data.name}</h2>
                 </a>
