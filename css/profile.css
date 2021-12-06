@@ -114,13 +114,20 @@ figure {
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;
-    justify-content: space-between;
+   
+    
 }
+/* #album::after{
+    content: "";
+    width: 300px;
+} */
 
 .picture_container{
-    
     margin-bottom: 1em;
-    
+    width: 25%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .picture{
@@ -141,6 +148,7 @@ figure {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 300px;
 }
 
 .svg_container{
@@ -371,6 +379,19 @@ textarea {
     .current_picture{
         height: 90vh;
         width: auto;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .picture_container{
+        
+        width: 33%;
+    }
+}
+@media screen and (max-width: 1170px) {
+    .picture_container{
+        
+        width: 50%;
     }
 }
 
