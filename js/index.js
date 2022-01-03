@@ -4,6 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const tag = urlParams.get('tag');
 
 
+// Recup data des photographes dans le fichier json
 async function get_data_photographers() {
     const response = await fetch('../json/data.json');
     const datas = await response.json();
