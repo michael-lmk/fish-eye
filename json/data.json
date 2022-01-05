@@ -71,7 +71,7 @@
         "likes": 62,
         "date": "2011-12-08",
         "price": 55,
-        "alt-text": "Photo d'une femme habillée en jaune devant une plage."
+        "alt_text": "Photo d'une femme habillée en jaune devant une plage."
       },
       {
         "id": 8520927,
@@ -82,7 +82,7 @@
         "likes": 11,
         "date": "2011-11-06",
         "price": 55,
-        "alt-text": "Photo d'une femme au millieu d'une route sur un pont."
+        "alt_text": "Photo d'une femme au millieu d'une route sur un pont."
       },
       {
         "id": 9025895,
@@ -93,7 +93,7 @@
         "likes": 72,
         "date": "2013-08-12",
         "price": 55,
-        "alt-text": "Photo d'une femme habillée d'une tenue rayé jaune, noir et bleu devant un mur."
+        "alt_text": "Photo d'une femme habillée d'une tenue rayé jaune, noir et bleu devant un mur."
       },
       {
         "id": 9275938,
@@ -104,7 +104,7 @@
         "likes": 69,
         "date": "2018-02-22",
         "price": 55,
-        "alt-text": "Photo d'un lieu préparer pour acceuilir un mariage."
+        "alt_text": "Photo d'un lieu préparer pour acceuilir un mariage."
       },
       {
         "id": 2053494,
@@ -115,7 +115,7 @@
         "likes": 2,
         "date": "2020-05-25",
         "price": 55,
-        "alt-text": "Photo d'un couple de dos à un mariage."
+        "alt_text": "Photo d'un couple de dos à un mariage."
       },
       {
         "id": 7324238,
@@ -126,7 +126,7 @@
         "likes": 33,
         "date": "2019-06-12",
         "price": 55,
-        "alt-text": "Photo d'un dix huitième anniversaire."
+        "alt_text": "Photo d'un dix huitième anniversaire."
       },
       {
         "id": 8328953,
@@ -137,7 +137,7 @@
         "likes": 24,
         "date": "2011-12-08",
         "price": 100,
-        "alt-text": "Vidéo d'une sculture en bois d'un cheval."
+        "alt_text": "Vidéo d'une sculture en bois d'un cheval."
       },
       {
         "id": 7502053,
@@ -148,7 +148,7 @@
         "likes": 88,
         "date": "2007-05-07",
         "price": 55,
-        "alt-text": "Peinture d'un triangle avec un homme dessiné à l'intérieur."
+        "alt_text": "Peinture d'un triangle avec un homme dessiné à l'intérieur."
       },
       {
         "id": 8523492,
@@ -159,7 +159,7 @@
         "likes": 24,
         "date": "2018-05-05",
         "price": 55,
-        "alt-text": "Photo d'un tunnel tagué éclairé en violet."
+        "alt_text": "Photo d'un tunnel tagué éclairé en violet."
       },
       {
         "id": 75902334,
@@ -170,7 +170,7 @@
         "likes": 75,
         "date": "2019-11-25",
         "price": 55,
-        "alt-text": "peinture de pigeons."
+        "alt_text": "peinture de pigeons."
       },
   
       {
@@ -182,7 +182,7 @@
         "likes": 52,
         "date": "2013-02-30",
         "price": 70,
-        "alt-text": "Photo aérienne d'un aviron 3 places."
+        "alt_text": "Photo aérienne d'un aviron 3 places."
       },
       {
         "id": 92758372,
@@ -193,7 +193,7 @@
         "likes": 58,
         "date": "2018-07-17",
         "price": 70,
-        "alt-text": "Photo de deux danseur habillé en bleu et blanc."
+        "alt_text": "Photo de deux danseur habillé en bleu et blanc."
       },
       {
         "id": 32958383,
@@ -204,7 +204,7 @@
         "likes": 11,
         "date": "2019-08-12",
         "price": 70,
-        "alt-text": "Photo d'une femme habillée d'un robe rouge."
+        "alt_text": "Photo d'une femme habillée d'un robe rouge."
       },
       {
         "id": 928587383,
@@ -215,7 +215,7 @@
         "likes": 2,
         "date": "2019-01-02",
         "price": 70,
-        "alt-text": "Photo prise lors d'une conférence."
+        "alt_text": "Photo prise lors d'une conférence."
       },
       {
         "id": 725639493,
@@ -226,7 +226,7 @@
         "likes": 3,
         "date": "2019-05-20",
         "price": 70,
-        "alt-text": "Photo prise lors d'une réunion de recherche de nouveau produit."
+        "alt_text": "Photo prise lors d'une réunion de recherche de nouveau produit."
       },
       {
         "id": 23394384,
@@ -237,7 +237,7 @@
         "likes": 52,
         "date": "2019-07-18",
         "price": 70,
-        "alt-text": "Photo d'un pianiste dans un festival de musique."
+        "alt_text": "Photo d'un pianiste dans un festival de musique."
       },
       {
         "id": 87367293,
@@ -248,7 +248,7 @@
         "likes": 23,
         "date": "2018-02-22",
         "price": 70,
-        "alt-text": "Photo d'un chanteur dans un festival de musique."
+        "alt_text": "Photo d'un chanteur dans un festival de musique."
       },
       {
         "id": 593834784,
@@ -259,7 +259,7 @@
         "likes": 52,
         "date": "2017-03-13",
         "price": 70,
-        "alt-text": "Photo d'un majesteux cervidé"
+        "alt_text": "Photo d'un majesteux cervidé"
       },
       {
         "id": 83958935,
@@ -270,7 +270,7 @@
         "likes": 52,
         "date": "2016-06-12",
         "price": 70,
-        "alt-text": "Vidéo d'un chien jouant sur la plage."
+        "alt_text": "Vidéo d'un chien jouant sur la plage."
       },
   
       {
@@ -282,7 +282,7 @@
         "likes": 23,
         "date": "2017-03-18",
         "price": 45,
-        "alt-text": "Vidéo aérienne d'une montagne."
+        "alt_text": "Vidéo aérienne d'une montagne."
       },
       {
         "id": 343423425,
@@ -293,7 +293,7 @@
         "likes": 101,
         "date": "2017-04-03",
         "price": 45,
-        "alt-text": "Phote de personnes ce baingant dans des sources chaudes."
+        "alt_text": "Phote de personnes ce baingant dans des sources chaudes."
       },
       {
         "id": 73434243,
@@ -304,7 +304,7 @@
         "likes": 99,
         "date": "2018-04-30",
         "price": 45,
-        "alt-text": "Photo d'une route perdu dans la nature."
+        "alt_text": "Photo d'une route perdu dans la nature."
       },
       {
         "id": 23425523,
@@ -325,7 +325,7 @@
         "likes": 23,
         "date": "2017-03-18",
         "price": 45,
-        "alt-text": "Photo d'un pont dans la forêt."
+        "alt_text": "Photo d'un pont dans la forêt."
       },
       {
         "id": 92352352,
@@ -336,7 +336,7 @@
         "likes": 66,
         "date": "2018-05-24",
         "price": 45,
-        "alt-text": "Photo d'une femme souriante."
+        "alt_text": "Photo d'une femme souriante."
       },
       {
         "id": 34513453,
@@ -347,7 +347,7 @@
         "likes": 52,
         "date": "2017-04-21",
         "price": 45,
-        "alt-text": "Photo sombre en noir et blanc d'un homme regardant au loin."
+        "alt_text": "Photo sombre en noir et blanc d'un homme regardant au loin."
       },
       {
         "id": 23523533,
@@ -358,7 +358,7 @@
         "likes": 95,
         "date": "2018-11-02",
         "price": 45,
-        "alt-text": "Phoo d'un femme regardant l'objectif fixement."
+        "alt_text": "Phoo d'un femme regardant l'objectif fixement."
       },
       {
         "id": 525834234,
@@ -369,7 +369,7 @@
         "likes": 25,
         "date": "2019-01-02",
         "price": 45,
-        "alt-text": "Photo portrait d'un homme agé regardant l'objectif."
+        "alt_text": "Photo portrait d'un homme agé regardant l'objectif."
       },
       {
         "id": 623534343,
@@ -380,7 +380,7 @@
         "likes": 88,
         "date": "2019-02-03",
         "price": 45,
-        "alt-text": "Photo d'une chaine de montagne avec une personne debout au loin."
+        "alt_text": "Photo d'une chaine de montagne avec une personne debout au loin."
       },
       {
         "id": 625025343,
@@ -391,7 +391,7 @@
         "likes": 85,
         "date": "2019-04-03",
         "price": 45,
-        "alt-text": "Photo d'une ville pleine de color, au bord de l'eau ."
+        "alt_text": "Photo d'une ville pleine de color, au bord de l'eau ."
       },
       {
         "id": 2525345343,
@@ -402,7 +402,7 @@
         "likes": 34,
         "date": "2019-04-07",
         "price": 45,
-        "alt-text": "Photo d'une fillette faisant une grimace."
+        "alt_text": "Photo d'une fillette faisant une grimace."
       },
       {
         "id": 2523434634,
@@ -413,7 +413,7 @@
         "likes": 63,
         "date": "2019-04-07",
         "price": 45,
-        "alt-text": "Photo de Nora"
+        "alt_text": "Photo de Nora"
       },
       {
         "id": 398847109,
@@ -424,7 +424,7 @@
         "likes": 55,
         "date": "2019-06-20",
         "price": 45,
-        "alt-text": "Photo en noir et blanc d'une femme"
+        "alt_text": "Photo en noir et blanc d'une femme"
       },
       {
         "id": 2534342,
@@ -435,7 +435,7 @@
         "likes": 25,
         "date": "2019-06-21",
         "price": 45,
-        "alt-text": "Table de restaurant au bord de plage"
+        "alt_text": "Table de restaurant au bord de plage"
       },
       {
         "id": 65235234,
@@ -446,7 +446,7 @@
         "likes": 52,
         "date": "2019-06-25",
         "price": 45,
-        "alt-text": "Photo de jeune marié"
+        "alt_text": "Photo de jeune marié"
       },
       {
         "id": 23523434,
@@ -457,7 +457,7 @@
         "likes": 77,
         "date": "2019-06-28",
         "price": 45,
-        "alt-text": "Photo de jeune marié"
+        "alt_text": "Photo de jeune marié"
       },
       {
         "id": 5234343,
@@ -468,7 +468,7 @@
         "likes": 142,
         "date": "2019-08-23",
         "price": 60,
-        "alt-text": "Vidéo d'un troupeau de chevaux"
+        "alt_text": "Vidéo d'un troupeau de chevaux"
       },
       {
         "id": 95234343,
@@ -479,7 +479,7 @@
         "likes": 59,
         "date": "2019-07-02",
         "price": 60,
-        "alt-text": "Photo d'un oiseau multi-color."
+        "alt_text": "Photo d'un oiseau multi-color."
       },
   
       {
@@ -491,7 +491,7 @@
         "likes": 25,
         "date": "2019-04-03",
         "price": 60,
-        "alt-text": "Photo d'une rué à Kyoto"
+        "alt_text": "Photo d'une rué à Kyoto"
       },
       {
         "id": 2523434,
@@ -502,7 +502,7 @@
         "likes": 53,
         "date": "2019-05-06",
         "price": 60,
-        "alt-text": "Photo de levé du jour à Venise"
+        "alt_text": "Photo de levé du jour à Venise"
       },
       {
         "id": 95293534,
@@ -513,7 +513,7 @@
         "likes": 33,
         "date": "2019-05-12",
         "price": 60,
-        "alt-text": "Photo d'un lac avec une montagne en arrière plan"
+        "alt_text": "Photo d'un lac avec une montagne en arrière plan"
       },
       {
         "id": 356234343,
@@ -524,7 +524,7 @@
         "likes": 53,
         "date": "2019-06-20",
         "price": 60,
-        "alt-text": "Photo d'un velo en pleine ville."
+        "alt_text": "Photo d'un velo en pleine ville."
       },
       {
         "id": 235234343,
@@ -535,7 +535,7 @@
         "likes": 63,
         "date": "2019-06-26",
         "price": 60,
-        "alt-text": "Porte de style indien donnat sur une ville."
+        "alt_text": "Porte de style indien donnat sur une ville."
       },
       {
         "id": 6234234343,
@@ -546,7 +546,7 @@
         "likes": 52,
         "date": "2019-06-30",
         "price": 60,
-        "alt-text": "Photo de l'hotel Contrast, St Petersburg"
+        "alt_text": "Photo de l'hotel Contrast, St Petersburg"
       },
       {
         "id": 6525666253,
@@ -557,7 +557,7 @@
         "likes": 63,
         "date": "2019-07-20",
         "price": 60,
-        "alt-text": "Photo d'une ville construite sur une montagne"
+        "alt_text": "Photo d'une ville construite sur une montagne"
       },
       {
         "id": 98252523433,
@@ -568,7 +568,7 @@
         "likes": 88,
         "date": "2020-01-05",
         "price": 60,
-        "alt-text": "Photo de la tour de Pise"
+        "alt_text": "Photo de la tour de Pise"
       },
       {
         "id": 9259398453,
@@ -579,7 +579,7 @@
         "likes": 57,
         "date": "2020-01-20",
         "price": 65,
-        "alt-text": "Photo aérienne d'une route à Buenos Aires"
+        "alt_text": "Photo aérienne d'une route à Buenos Aires"
       },
       {
         "id": 3523523534,
@@ -590,7 +590,7 @@
         "likes": 54,
         "date": "2020-05-05",
         "price": 60,
-        "alt-text": "Photo d'un immeuble et du ciel en fond."
+        "alt_text": "Photo d'un immeuble et du ciel en fond."
       },
   
       {
@@ -602,7 +602,7 @@
         "likes": 150,
         "date": "2018-02-30",
         "price": 70,
-        "alt-text": "Vidéo d'une gymnaste"
+        "alt_text": "Vidéo d'une gymnaste"
       },
       {
         "id": 235234343,
@@ -613,7 +613,7 @@
         "likes": 101,
         "date": "2018-03-05",
         "price": 65,
-        "alt-text": "Photo d'un escaladeur."
+        "alt_text": "Photo d'un escaladeur."
       },
       {
         "id": 235343222,
@@ -624,7 +624,7 @@
         "likes": 103,
         "date": "2018-03-10",
         "price": 70,
-        "alt-text": "Photo d'un surfer dans une vague."
+        "alt_text": "Photo d'un surfer dans une vague."
       },
       {
         "id": 7775342343,
@@ -635,7 +635,7 @@
         "likes": 77,
         "date": "2018-04-16",
         "price": 50,
-        "alt-text": "photo d'un shieur dans les airs"
+        "alt_text": "photo d'un shieur dans les airs"
       },
       {
         "id": 9253445784,
@@ -646,7 +646,7 @@
         "likes": 88,
         "date": "2018-04-22",
         "price": 65,
-        "alt-text": "Photo de coureur en plein sprint"
+        "alt_text": "Photo de coureur en plein sprint"
       },
       {
         "id": 22299394,
@@ -657,7 +657,7 @@
         "likes": 95,
         "date": "2018-04-27",
         "price": 70,
-        "alt-text": "Photo d'un skater dans les airs"
+        "alt_text": "Photo d'un skater dans les airs"
       },
       {
         "id": 3452342633,
@@ -668,7 +668,7 @@
         "likes": 52,
         "date": "2018-05-03",
         "price": 75,
-        "alt-text": "Photo d'un batiment blanc très lumineux"
+        "alt_text": "Photo d'un batiment blanc très lumineux"
       },
       {
         "id": 939234243,
@@ -679,7 +679,7 @@
         "likes": 55,
         "date": "2018-05-10",
         "price": 72,
-        "alt-text": "Photo d'un batiment moderne"
+        "alt_text": "Photo d'un batiment moderne"
       },
       {
         "id": 222959233,
@@ -690,7 +690,7 @@
         "likes": 85,
         "date": "2018-05-15",
         "price": 71,
-        "alt-text": "Photo d'un batiment en noir et blanc"
+        "alt_text": "Photo d'un batiment en noir et blanc"
       },
       {
         "id": 965933434,
@@ -701,7 +701,7 @@
         "likes": 66,
         "date": "2018-05-20",
         "price": 58,
-        "alt-text": "Photo d'un batiment tout en verre de coleur jaune"
+        "alt_text": "Photo d'un batiment tout en verre de coleur jaune"
       },
       {
         "id": 777723343,
@@ -712,7 +712,7 @@
         "likes": 79,
         "date": "2018-05-21",
         "price": 80,
-        "alt-text":"Photo d'un batiment bleu"
+        "alt_text":"Photo d'un batiment bleu"
       }
     ]
   }
