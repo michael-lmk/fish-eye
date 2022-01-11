@@ -9,6 +9,7 @@ class Photographer {
         this._tagline = data.tagline;
         this._price = data.price;
         this._portrait = data.portrait;
+        this._media = [];
     }
 
     get id() {
@@ -35,11 +36,32 @@ class Photographer {
     get portrait() {
         return this._portrait
     }
+    get media() {
+        return this._media
+    }
+    get totalLikes() {
+        return this._totalLikes
+    }
+
+
+    /**
+     * @param {Array} arrayOfMedia
+     */
+    set media ( arrayOfMedia ) {
+        this._media = arrayOfMedia  
+    }
+    
+    /**
+     * @param {Int} likes
+     */
+    set totalLikes ( likes ) {
+        this._totalLikes = likes  
+    }
     
     build_card () {
-
         //si le parametre existe et que le tag n'est pas inclus dans le profil on ne l'affiche pas 
        
+
         const $wrapper = document.createElement('article');
         $wrapper.setAttribute( "data-id", this._id )
         
@@ -67,9 +89,10 @@ class Photographer {
 
         return $wrapper;
         
-        
-        
-        
+    }
+
+    sortMedia () {
+        this._media.sort(sort_by_likes);
     }
 
 }

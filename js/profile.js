@@ -16,72 +16,19 @@ let currentIndexImg = 0;
 
 
 
-function sort_by_likes (a,b) {
-    return a.likes - b.likes;
-}
+// function sort_by_likes (a,b) {
+//     return a.likes - b.likes;
+// }
 
-function sort_by_date (a,b){
-    return new Date(b.date) - new Date(a.date);
-}
+// function sort_by_date (a,b){
+//     return new Date(b.date) - new Date(a.date);
+// }
 
-function sort_by_title (a,b){
+// function sort_by_title (a,b){
    
-    return a.title.localeCompare(b.title);
-}
+//     return a.title.localeCompare(b.title);
+// }
 
-// Recupere les donnée des images d'album
-async function get_data_medias(order_by) {
-
-    const response = await fetch('../json/data.json');
-    const datas = await response.json();
-
-    const mediasOfUser = datas.media.filter(element => element.photographerId == userId);
-
-    if (order_by) {
-        mediasOfUser.sort(order_by);
-    }
-   
-    albumMediaSave = mediasOfUser;
-
-    return mediasOfUser;
-    
-}
-
-//Recupere les information du profil
-async function get_data_photographer() {
-
-    const response = await fetch('../json/data.json');
-    const datas = await response.json();
-
-    const user_info = datas.photographers.filter(element => element.id == userId );
-
-    return user_info[0];
-    
-}
-
-// envoie les données du profil
-async function send_Profile_to_html() {
-    const user = await get_data_photographer();
-
-    saveUser = user;
-
-    // Ajout du profile dans le html 
-    document.getElementById("name").innerText = user.name ;
-    document.getElementById("img").src = '/img/photo_profile/'+user.portrait; 
-    document.getElementById("city").innerText = user.city+", "+user.country;
-    document.getElementById("tagline").innerText = user.tagline;
-    document.getElementById("price").innerHTML = user.price + "€ / jour";
-
-    const tagsDOM = document.getElementsByClassName("tags")[0];
-    const tagsArray = user.tags;
-
-    for (let index = 0; index < tagsArray.length; index++) {
-        const tag = tagsArray[index];
-        tagsDOM.innerHTML += `<a href="index.html?tag=${tag}">#${tag}</a>`
-
-    }
-
-}
 
 // envoie les données des albums
 async function send_media_to_html (orderParam) {
@@ -192,47 +139,6 @@ async function img_event_click () {
             
         });
     
-    }
-}
-
-function previousPicture() {
-    console.log();
-    if (currentIndexImg === albumMediaSave.length-1) {
-        currentIndexImg = 0;
-    }else{
-        currentIndexImg++;
-    }
-
-    if (albumMediaSave[currentIndexImg].image) {
-        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
-    }else{
-        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
-            <video class="current_picture" controls width="250">
-                <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
-
-                Sorry, your browser doesn't support embedded videos.
-            </video>`;
-    }
-}
-
-
-function nextPicture() {
-     
-    if (currentIndexImg === 0) {
-        currentIndexImg = albumMediaSave.length-1;
-    }else{
-        currentIndexImg--;
-    }
-
-    if (albumMediaSave[currentIndexImg].image) {
-        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${userId}/${albumMediaSave[currentIndexImg].image}" alt="">`;
-    }else{
-        document.getElementsByClassName("container_ligthbox")[0].innerHTML = `
-            <video class="current_picture" controls  autoplay="true">
-                <source src="../img/${userId}/${albumMediaSave[currentIndexImg].video}" type="video/mp4">
-
-                Sorry, your browser doesn't support embedded videos.
-            </video>`;
     }
 }
 
