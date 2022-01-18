@@ -10,6 +10,7 @@ class Photographer {
         this._price = data.price;
         this._portrait = data.portrait;
         this._media = [];
+        this.totalLikes = 0;
     }
 
     get id() {
@@ -104,6 +105,13 @@ class Photographer {
                 this._media.sort(sort_by_likes)
                 break;
         }
+    }
+
+    static calculateTotalLikes () {
+
+        this._media.map((e) => {
+            return e._likes
+        })
     }
 
 }

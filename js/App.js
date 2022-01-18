@@ -43,13 +43,6 @@ class App {
         //Album
         const media = await this.PhotographerApi.getMediasByPhotographer(this.currentPhotographer._id);
 
-        // Ajout du profile dans le html 
-        document.getElementById("name").innerText = this.currentPhotographer._name ;
-        document.getElementById("img").src = '/img/photo_profile/'+this.currentPhotographer._portrait; 
-        document.getElementById("city").innerText = this.currentPhotographer._city+", "+this.currentPhotographer._country;
-        document.getElementById("tagline").innerText = this.currentPhotographer._tagline;
-        document.getElementById("price").innerHTML = this.currentPhotographer._price + "€ / jour";
-
         const tagsDOM = document.getElementsByClassName("tags")[0];
         const tagsArray = this.currentPhotographer._tags;
 
@@ -60,24 +53,20 @@ class App {
 
         media.sort(sort_by_likes);
 
-        // switch (this.selectInputDom) {
-        //     case "2":
-        //         media.sort(sort_by_date)
-        //         break;
-        //     case "3":
-        //         media.sort(sort_by_title)  
-        //         break;
-        //     default:
-        //         media.sort(sort_by_likes)
-        //         break;
-        // }
-
         this.currentPhotographer._media = media.map((media) => {
-            var mediaInstance = new Media(media)
+            var mediaInstance = new Media(media);
             mediaInstance.build_card();
+            this.currentPhotographer.totalLikes += parseInt(mediaInstance._likes);
             return mediaInstance
         })
-
+       
+        // Ajout du profile dans le html 
+        document.getElementById("name").innerText = this.currentPhotographer._name ;
+        document.getElementById("img").src = '/img/photo_profile/'+this.currentPhotographer._portrait; 
+        document.getElementById("city").innerText = this.currentPhotographer._city+", "+this.currentPhotographer._country;
+        document.getElementById("tagline").innerText = this.currentPhotographer._tagline;
+        document.getElementById("price").innerHTML = this.currentPhotographer._price + "€ / jour";
+        document.getElementById("total_likes").innerHTML = this.currentPhotographer.totalLikes;
     }
 }
 
