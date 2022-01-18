@@ -58,7 +58,7 @@ class PhotographerApi extends Api {
                 mediaOfPhotographer.push(element);
             }
         }
-        console.log("mediaOfPhotographer",mediaOfPhotographer);
+        // console.log("mediaOfPhotographer",mediaOfPhotographer);
         return mediaOfPhotographer;
     }
 }
@@ -74,7 +74,6 @@ class MediaApi extends Api {
 
     async getMedias() {
         var res = await this.get();
-        console.log("res",res.media);
         return res.media
     }
     

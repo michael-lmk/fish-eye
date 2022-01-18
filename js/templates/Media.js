@@ -1,5 +1,6 @@
 class Media {
     constructor(data){
+        console.log("data",data);
         this._id = data.id;
         this._photographerId = data.photographerId;
         this._title = data.title;
@@ -14,6 +15,7 @@ class Media {
     }
 
     build_card () {
+
         // count_likes += media.likes;
         
         var element = document.createElement("div");
@@ -27,7 +29,7 @@ class Media {
                     `<img class="picture" src="../img/${this._photographerId}/${this._image}" class="album_img" alt="${this._alt_text}"  />`
                 :
                     `<video  class="picture" controls data-id="${this._id}" preload="metadata">
-                        <source src="../img/${this._photographerId}/${this._video}#t=1" type="video/mp4" ">
+                        <source src="../img/${this._photographerId}/${this._video}#t=1" type="video/mp4">
 
                         Sorry, your browser doesn't support embedded videos.
                     </video>`
@@ -57,7 +59,9 @@ class Media {
             document.getElementById("visualisation").style.display = "block";
             document.getElementsByClassName("next")[0].focus();
             
-            // let dataId = event.currentTarget.getAttribute("data-id");
+            let dataId = event.currentTarget.getAttribute("data-id");
+            // console.log(dataId,  app.currentPhotographer._media);
+            currentIndexImg = app.currentPhotographer._media.findIndex(element => dataId == element._id);
 
             if (this._image) {
                 document.getElementsByClassName("container_ligthbox")[0].innerHTML = `<img class="current_picture" src="../img/${this._photographerId}/${this._image}" alt="${this._alt_text}">`;
@@ -70,7 +74,7 @@ class Media {
                         Sorry, your browser doesn't support embedded videos.
                     </video>`;
             }
-            
+           
         });
         
     }
@@ -90,5 +94,9 @@ class Media {
         });
         
         
+    }
+
+    static clear_dom_element () {
+        document.getElementById("album").innerHTML = "";
     }
 }

@@ -8,13 +8,6 @@ const btnCloseLightbox = document.getElementById('close_form_2');
 const imagesDom = document.getElementsByClassName("open_visu");
 const sendMsgForm = document.getElementsByClassName("send_msg")[0];
 
-//savegarde des données pour ne pas devoir refaire la requete
-let saveUser = {};
-let albumMediaSave = [];
-let currentIndexImg = 0;
-
-
-
 
 // function sort_by_likes (a,b) {
 //     return a.likes - b.likes;
@@ -200,4 +193,4 @@ send_media_to_html().then(() => {
     img_event_click();
 });
 
-send_Profile_to_html();
+// send_Profile_to_html();

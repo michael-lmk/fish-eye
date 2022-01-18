@@ -1,6 +1,3 @@
-// const queryString = window.location.search;
-// const urlParams = new URLSearchParams(queryString);
-// const userId = urlParams.get('i');
 const selectInputDom = document.getElementById("sort_input");
 const btnContactDom = document.getElementById('btn_contact_form');
 const btnContactClose = document.getElementById('close_form');
@@ -9,18 +6,26 @@ const imagesDom = document.getElementsByClassName("open_visu");
 const sendMsgForm = document.getElementsByClassName("send_msg")[0];
 
 
-document.getElementsByClassName("next")[0].addEventListener( "click", nextPicture() );
+document.getElementsByClassName("next")[0].addEventListener( "click", () => { nextPicture();  } );
 document.addEventListener("keydown", (e) => { e.key === "ArrowLeft"? nextPicture() : null });
 
 document.getElementsByClassName("previous")[0].addEventListener("click", previousPicture);
 document.addEventListener("keydown", (e) => {e.key === "ArrowRight"? previousPicture() : null});
 
 selectInputDom.addEventListener("change", () => {
+    app.currentPhotographer.sortMedia();
 
-    send_media_to_html(selectInputDom.value).then(() => {
-        increase_likes();
-        img_event_click();
-    });
+    Media.clear_dom_element();
+    
+    app.currentPhotographer.media.map((media) => {
+
+        media.build_card();
+    })
+
+    // send_media_to_html(selectInputDom.value).then(() => {
+    //     increase_likes();
+    //     img_event_click();
+    // });
 })
 
 
