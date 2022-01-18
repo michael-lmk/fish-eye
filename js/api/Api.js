@@ -43,14 +43,13 @@ class PhotographerApi extends Api {
    
     async getPhotographer(id) {
         var res = await this.getOnce(id)
-        console.log("res",res);
         return res;
     }
 
     async getMediasByPhotographer(photographerId) {
         var res = await this.get();
         var mediaOfPhotographer =  [];
-        // .filter(e => e.photographerId === photographerId)
+
         for (let index = 0; index < res.media.length; index++) {
             const element = res.media[index];
             if (element.photographerId === photographerId) {
@@ -58,7 +57,7 @@ class PhotographerApi extends Api {
                 mediaOfPhotographer.push(element);
             }
         }
-        // console.log("mediaOfPhotographer",mediaOfPhotographer);
+   
         return mediaOfPhotographer;
     }
 }

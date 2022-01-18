@@ -40,28 +40,9 @@ class Photographer {
     get media() {
         return this._media
     }
-    get totalLikes() {
-        return this._totalLikes
-    }
-
-
-    /**
-     * @param {Array} arrayOfMedia
-     */
-    set media ( arrayOfMedia ) {
-        this._media = arrayOfMedia  
-    }
-    
-    /**
-     * @param {Int} likes
-     */
-    set totalLikes ( likes ) {
-        this._totalLikes = likes  
-    }
     
     build_card () {
         //si le parametre existe et que le tag n'est pas inclus dans le profil on ne l'affiche pas 
-       
 
         const $wrapper = document.createElement('article');
         $wrapper.setAttribute( "data-id", this._id )
@@ -93,7 +74,7 @@ class Photographer {
     }
 
     sortMedia () {
-        console.log(app.selectInputDom.value);
+
         switch (app.selectInputDom.value) {
             case "2":
                 this._media.sort(sort_by_date)
@@ -105,13 +86,6 @@ class Photographer {
                 this._media.sort(sort_by_likes)
                 break;
         }
-    }
-
-    static calculateTotalLikes () {
-
-        this._media.map((e) => {
-            return e._likes
-        })
     }
 
 }

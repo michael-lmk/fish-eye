@@ -1,6 +1,5 @@
 class Media {
     constructor(data){
-        console.log("data",data);
         this._id = data.id;
         this._photographerId = data.photographerId;
         this._title = data.title;
@@ -44,8 +43,8 @@ class Media {
                     </div>
                 </button>
             </div>
-            
         `;
+        
         this.mediasDom.appendChild(element);
         this.increase_likes(element);
         this.img_event_click(element);
@@ -60,7 +59,7 @@ class Media {
             document.getElementsByClassName("next")[0].focus();
             
             let dataId = event.currentTarget.getAttribute("data-id");
-            // console.log(dataId,  app.currentPhotographer._media);
+          
             currentIndexImg = app.currentPhotographer._media.findIndex(element => dataId == element._id);
 
             if (this._image) {

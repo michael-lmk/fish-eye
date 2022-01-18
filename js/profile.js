@@ -182,9 +182,6 @@ sendMsgForm.addEventListener("click", (e) => {
     formData.forEach((element) => {
         results[element.id] =  element.value;
     })
-    
-    console.log(results); 
-    
 })
 
 

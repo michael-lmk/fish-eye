@@ -56,6 +56,4 @@ sendMsgForm.addEventListener("click", (e) => {
         results[element.id] =  element.value;
     })
     
-    console.log(results); 
-    
 })
