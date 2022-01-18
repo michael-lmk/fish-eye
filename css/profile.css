@@ -198,6 +198,7 @@ button {
 .sort{
     display: flex;
     margin: 2em 0 2em 0;
+    align-items: center;
 }
 
 select{
@@ -206,8 +207,8 @@ select{
     border-radius: 5px;
     margin-left: 10px;
     border: none;
-
-    
+    padding: 13px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .container_likes{

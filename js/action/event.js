@@ -32,7 +32,7 @@ selectInputDom.addEventListener("change", () => {
 btnContactDom.addEventListener("click", (event) => {
     event.preventDefault();
     document.getElementById("contact_form").style.display = "flex";
-    document.getElementById("photographer_name").innerText = saveUser.name;
+    document.getElementById("photographer_name").innerText = app.currentPhotographer.name;
 })
 
 btnContactClose.addEventListener("click", () => {
