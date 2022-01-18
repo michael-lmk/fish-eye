@@ -6,6 +6,11 @@ const imagesDom = document.getElementsByClassName("open_visu");
 const sendMsgForm = document.getElementsByClassName("send_msg")[0];
 
 
+window.addEventListener("load", function(event) {
+    document.getElementById("loader").hidden = true;
+    document.getElementById("album").hidden = false;
+});
+
 document.getElementsByClassName("next")[0].addEventListener( "click", () => { nextPicture();  } );
 document.addEventListener("keydown", (e) => { e.key === "ArrowLeft"? nextPicture() : null });
 

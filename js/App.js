@@ -3,16 +3,13 @@ const urlParams = new URLSearchParams(queryString);
 const sort = urlParams.get('tag');
 const photographerId = urlParams.get('i');
 var currentLocation = window.location.pathname ;
-//savegarde des données pour ne pas devoir refaire la requete
-// let currentPhotographer;
-// let currentIndexImg = 0;
 
 class App {
     constructor() {
         this.$indexMain = document.querySelector('#main');
         this.selectInputDom = document.getElementById("sort_input");
         this.PhotographerApi = new PhotographerApi('/json/data.json');
-        this.currentPhotographer = Photographer;
+        this.currentPhotographer = {};
     }
 
     async index() {
@@ -67,6 +64,7 @@ class App {
         document.getElementById("tagline").innerText = this.currentPhotographer._tagline;
         document.getElementById("price").innerHTML = this.currentPhotographer._price + "€ / jour";
         document.getElementById("total_likes").innerHTML = this.currentPhotographer.totalLikes;
+      
     }
 }
 
@@ -77,7 +75,7 @@ switch (currentLocation) {
         app.index();
         break;
     case "/profile.html":
-        app.profile();
+        app.profile().then(() => {  });
         break;
 
     default:
