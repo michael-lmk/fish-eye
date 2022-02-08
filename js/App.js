@@ -49,9 +49,16 @@ class App {
     media.sort((a, b)=> {
       return a.likes - b.likes;
     });
-    console.log(media);
+
     this.currentPhotographer._media = media.map((media) => {
-      var mediaInstance = new Media(media);
+      var mediaInstance;
+      if (media.image) {
+        mediaInstance = new Picture(media);
+      } else if (media.video) {
+        mediaInstance = new Video(media);
+      } 
+        
+      console.log(mediaInstance);
       mediaInstance.build_card();
       this.currentPhotographer.totalLikes += parseInt(mediaInstance._likes);
       return mediaInstance;

@@ -21,7 +21,7 @@ class Photographer {
     let html = `
             <a class="link" href="./profile.html?i=${this._id}">
                 <div class="container_img">
-                    <img src="./img/photo_profile/${this._portrait}" alt="Photo du photographe">
+                    <img src="./img/photo_profile/${this._portrait}" alt="Photo du photographe ${this._name}">
                 </div>
                 <h2>${this._name}</h2>
             </a>
@@ -43,3 +43,6 @@ class Photographer {
   }
 
 }
+
+
+

@@ -1,7 +1,7 @@
-class Image extends Media{
+class Picture extends Media{
   constructor(data){
     super(data)
-    this._video = data.video;
+    this._image = data.image;
   }
 
   build_card() {

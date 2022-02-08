@@ -11,8 +11,8 @@ class Video extends Media{
 
     element.innerHTML += `
       <button class="open_visu"  data-id="${this._id}">
-        <video  class="picture" controls data-id="${this._id}" preload="metadata">
-            <source src="../img/${this._photographerId}/${this._video}#t=1" type="video/mp4">
+        <video id="video" class="picture video" data-id="${this._id}" preload="metadata">
+            <source src="../img/${this._photographerId}/${this._video}#t=5" type="video/mp4">
             Sorry, your browser doesn't support embedded videos.
         </video>
       </button>
@@ -30,5 +30,7 @@ class Video extends Media{
     this.mediasDom.appendChild(element);
     this.increase_likes(element);
     this.img_event_click(element);
+  
   }
+
 }
