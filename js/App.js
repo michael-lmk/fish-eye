@@ -19,10 +19,11 @@ class App {
     // je transforme mon tableau de données en un tableau de classe
     PhotographersData.map(async (element) => {
       var photographer = new Photographer(element);
-
-      if (sort && !photographer.tags.includes(sort)) {
-        console.log("ne pas affiché.", "sort :", sort, ", name: ", this._name);
+      console.log(photographer?._tags, sort);
+      if (sort && !photographer?._tags?.includes(sort)) {
+        console.log("ne pas affiché.", "sort :", sort, ", name: ", photographer._name);
       } else {
+        console.log("ok");
         this.$indexMain.appendChild(photographer.build_card());
       }
     });
@@ -45,8 +46,10 @@ class App {
       tagsDOM.innerHTML += `<a href="index.html?tag=${tag}">#${tag}</a>`;
     }
 
-    media.sort(sort_by_likes);
-
+    media.sort((a, b)=> {
+      return a.likes - b.likes;
+    });
+    console.log(media);
     this.currentPhotographer._media = media.map((media) => {
       var mediaInstance = new Media(media);
       mediaInstance.build_card();
