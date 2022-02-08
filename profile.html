@@ -48,29 +48,29 @@
     <section aria-label="Album photo" id="album"></section>
   </main>
 
-  <section class="modal_background" id="contact_form">
+  <section  class="modal_background" id="contact_form">
     <div class="modal_body">
-      <form id="form_body">
+      <form aria-label="Modal formulaire de contact" id="form_body">
         <h1>Contactez-moi <br /><span id="photographer_name"></span></h1>
-        <span id="close_form">+</span>
+        <button aria-label="Quitter" tabindex="1" id="close_form">+</button>
 
         <span class="group_input">
           <label for="prenom">Prénom</label>
-          <input type="text" id="prenom" name="prenom" />
+          <input tabindex="2" type="text" id="prenom" name="prenom" />
         </span>
         <span class="group_input">
           <label for="nom">Nom</label>
-          <input type="text" id="nom" name="nom" />
+          <input tabindex="3" type="text" id="nom" name="nom" />
         </span>
         <span class="group_input">
           <label for="email">Email</label>
-          <input type="text" id="email" name="email" />
+          <input tabindex="4" type="text" id="email" name="email" />
         </span>
         <span class="group_input">
           <label for="message">Message</label>
-          <textarea rows="10" type="text" id="message" name="message"></textarea>
+          <textarea tabindex="5" rows="10" type="text" id="message" name="message"></textarea>
         </span>
-        <button aria-label="Envoyer" class="send_msg" type="submit">
+        <button tabindex="6" aria-label="Envoyer" class="send_msg" type="submit">
           Envoyer
         </button>
       </form>

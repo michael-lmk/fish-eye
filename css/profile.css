@@ -102,6 +102,7 @@ figure {
   cursor: pointer;
   transition: 0.3s;
   text-decoration: none;
+  font-size: 13px;
 }
 /*************************/
 /******** Album **********/
@@ -297,6 +298,7 @@ textarea {
   right: 0;
   color: white;
   cursor: pointer;
+  background-color: transparent ;
 }
 
 .send_msg {

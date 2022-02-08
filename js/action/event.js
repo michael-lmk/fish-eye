@@ -42,11 +42,13 @@ selectInputDom.addEventListener("change", (e) => {
 btnContactDom.addEventListener("click", (event) => {
   event.preventDefault();
   document.getElementById("contact_form").style.display = "flex";
+  document.getElementById("close_form").focus();
   document.getElementById("photographer_name").innerText =
-    app.currentPhotographer.name;
+    app.currentPhotographer._name;
 });
 
-btnContactClose.addEventListener("click", () => {
+btnContactClose.addEventListener("click", (e) => {
+  e.preventDefault();
   document.getElementById("contact_form").style.display = "none";
 });
 
@@ -70,4 +72,6 @@ sendMsgForm.addEventListener("click", (e) => {
   formData.forEach((element) => {
     results[element.id] = element.value;
   });
+  console.log(results);
+  document.getElementById("contact_form").style.display = "none";
 });

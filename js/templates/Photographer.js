@@ -42,17 +42,4 @@ class Photographer {
     return $wrapper;
   }
 
-  sortMedia() {
-    switch (app.selectInputDom.value) {
-      case "2":
-        this._media.sort(sort_by_date);
-        break;
-      case "3":
-        this._media.sort(sort_by_title);
-        break;
-      default:
-        this._media.sort(sort_by_likes);
-        break;
-    }
-  }
 }
